@@ -5,7 +5,7 @@ use App\WeatherService;
 require_once __DIR__ . '/vendor/autoload.php';
 
 $weatherService = new WeatherService();
-$city = 'Singapore';
+$city = $argv['1']; // get the second argument
 $weather = $weatherService->getWeather($city);
 // var_dump($weather);
 echo "\n";
