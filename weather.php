@@ -4,6 +4,11 @@ use App\WeatherService;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+if ($argc < 2) { // must have two arguments
+    echo "Correct Usage: php weather.php city\n";
+    exit(1); // 0 is success and 1 is generic error
+}
+
 $weatherService = new WeatherService();
 $city = $argv['1']; // get the second argument
 $weather = $weatherService->getWeather($city);
@@ -28,4 +33,11 @@ You MUST run:
 composer dump-autoload
 
 Without this → Composer still uses old class map → class “not found”.
+
+Other possible improvements:
+
+1. Include apiKey in env variable
+2. There are frameworks to build CLI appllcations!
+3. May want to handle exceptions
+
 */
