@@ -7,7 +7,12 @@ require_once __DIR__ . '/vendor/autoload.php';
 $weatherService = new WeatherService();
 $city = 'Singapore';
 $weather = $weatherService->getWeather($city);
-var_dump($weather);
+// var_dump($weather);
+echo "\n";
+echo "City: " . $weather['city'] . "\n";
+echo "Temperature: " . $weather['temperature'] . "°C\n";
+echo "Description: " . $weather['description'] . "\n";
+echo "Humidity: " . $weather['humidity'] . "%\n";
 
 /*
 🔥 MOST IMPORTANT STEP (people miss this)
