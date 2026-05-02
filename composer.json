@@ -1,0 +1,21 @@
+{
+  "name": "renny/weather-app",
+  "description": "Our first php application",
+  "require": {
+    "guzzlehttp/guzzle": "^7.10"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Renny Su",
+      "email": "rennie.su@gmail.com"
+    }
+  ]
+}
