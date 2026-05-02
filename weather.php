@@ -1,3 +1,5 @@
+#!/usr/bin/env php
+
 <?php
 
 use App\WeatherService;
@@ -9,7 +11,7 @@ if ($argc < 2) { // must have two arguments
     exit(1); // 0 is success and 1 is generic error
 }
 
-$weatherService = new WeatherService();
+$weatherService = new WeatherService(); // use the class
 $city = $argv['1']; // get the second argument
 $weather = $weatherService->getWeather($city);
 // var_dump($weather);
@@ -39,5 +41,11 @@ Other possible improvements:
 1. Include apiKey in env variable
 2. There are frameworks to build CLI appllcations!
 3. May want to handle exceptions
+
+PHP might be installed in different locations
+/usr/bin/env searches your PATH
+makes scripts portable across systems
+chmod +x weather.php
+./weather.php
 
 */
