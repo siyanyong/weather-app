@@ -4,6 +4,7 @@
 
 use App\WeatherService;
 
+// Most idiomatic way! Best!
 require_once __DIR__ . '/vendor/autoload.php';
 
 if ($argc < 2) { // must have two arguments
