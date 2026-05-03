@@ -26,7 +26,8 @@ class WeatherService
             ]
         ]);
 
-        $weatherData = json_decode($response->getBody()->getContents(), true); // true to return as associative array
+        // $weatherData = json_decode($response->getBody()->getContents(), true); // true to return as associative array
+        $weatherData = json_decode((string)$response->getBody(), true); // better practice is to cast to string instead of reading fm stream
 
         return [
             'city' => $weatherData['name'],
@@ -52,4 +53,11 @@ new WeatherService(
     'key',
     'url'
 );
+
+Streams are consumable. If you do this:
+
+$response->getBody()->getContents();
+$response->getBody()->getContents(); // ← likely empty
+
+The second call may return nothing unless you rewind the stream.
 */
